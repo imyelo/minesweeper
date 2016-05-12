@@ -1,0 +1,47 @@
+@CELL_RADIUS: 18px;
+
+.game {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  .column {
+    width: @CELL_RADIUS * 2;
+    display: inline-block;
+    margin-right: 2px;
+    .cell {
+      width: @CELL_RADIUS * 2;
+      height: @CELL_RADIUS * 2;
+      margin-bottom: 2px;
+      background-color: #ddd;
+      box-sizing: border-box;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+      font-family: Arial;
+      &:active {
+        background-color: #ccc;
+      }
+      &.unknown {
+      }
+      &.uncertain {
+        background-color: #FBE548;
+      }
+      &.marked {
+        background-color: #E26262;
+      }
+      &.grubbed {
+        background-color: #A1BDBC;
+        color: #fff;
+      }
+      &.bomb {
+        background-color: transparent;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
