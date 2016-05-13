@@ -16,10 +16,10 @@ gulp.task('rev', function () {
 });
 
 gulp.task('rev-replace', function () {
-  return gulp.src('./src/view/**/*.ejs')
+  return gulp.src('./src/index.html')
     .pipe(replace({
       manifest: gulp.src('./build/rev-manifest.json'),
-      replaceInExtensions: ['.ejs']
+      replaceInExtensions: ['.html']
     }))
-    .pipe(gulp.dest('./build/view'))
+    .pipe(gulp.dest('./build'))
 });

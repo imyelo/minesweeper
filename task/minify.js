@@ -11,7 +11,7 @@ gulp.task('uglify', function () {
 });
 
 gulp.task('htmlmin', function () {
-  return gulp.src('./build/view/**/*.ejs', {
+  return gulp.src('./build/index.html', {
       base: './build'
     })
     .pipe(htmlmin({collapseWhitespace: true}))
