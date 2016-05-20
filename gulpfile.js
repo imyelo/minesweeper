@@ -2,12 +2,13 @@ var gulp = require('gulp');
 var sequence = require('run-sequence');
 
 require('./task/clean');
+require('./task/copy');
 require('./task/webpack');
 require('./task/rev');
 require('./task/minify');
 
 gulp.task('dev', function () {
-  return sequence('clean', 'webpack-dev');
+  return sequence('clean', 'copy', 'webpack-dev');
 });
 
 gulp.task('build', function () {
